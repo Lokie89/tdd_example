@@ -4,17 +4,17 @@ public abstract class Money {
     protected int amount;
     protected String currency;
 
-    static Dollar dollar(int amount){
-        return new Dollar(amount);
+    static Dollar dollar(int amount) {
+        return new Dollar(amount, "USD");
     }
 
-    static Franc franc(int amount){
-        return new Franc(amount);
+    static Franc franc(int amount) {
+        return new Franc(amount, "CHF");
     }
 
     abstract Money times(int multiplier);
 
-    String currency(){
+    String currency() {
         return currency;
     }
 
