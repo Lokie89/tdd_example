@@ -41,4 +41,9 @@ public class Money implements Expression {
         int rate = bank.rate(currency, to);
         return new Money(amount / rate, to);
     }
+
+    @Override
+    public String toString() {
+        return amount + " " + currency;
+    }
 }
