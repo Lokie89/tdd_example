@@ -17,12 +17,16 @@ public class Money {
         return new Money(amount, "CHF");
     }
 
-    Money times(int multiplier){
+    Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
     }
 
     String currency() {
         return currency;
+    }
+
+    Money plus(Money addend) {
+        return new Money(amount + addend.amount, currency);
     }
 
     @Override
