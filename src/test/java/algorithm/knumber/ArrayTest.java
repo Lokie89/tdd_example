@@ -12,26 +12,26 @@ public class ArrayTest {
 
     @Test
     void testCutArray() {
-        Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
-        assertEquals(array.cut(new int[]{1, 2}), new Array(new int[]{1, 5}));
-        assertEquals(array.cut(new int[]{1, 3}), new Array(new int[]{1, 5, 2}));
+        Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
+        assertEquals(array.cut(new int[]{1, 2}), Array.of(1, 5));
+        assertEquals(array.cut(new int[]{1, 3}), Array.of(1, 5, 2));
     }
 
     @Test
     void testSortArray() {
-        Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
-        assertEquals(array.sort(), new Array(new int[]{1, 2, 3, 4, 5, 6, 7}));
+        Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
+        assertEquals(array.sort(), Array.of(1, 2, 3, 4, 5, 6, 7));
     }
 
     @Test
     void testCutSortArray() {
-        Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
-        assertEquals(array.cut(new int[]{1, 3}).sort(), new Array(new int[]{1, 2, 5}));
+        Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
+        assertEquals(array.cut(new int[]{1, 3}).sort(), Array.of(1, 2, 5));
     }
 
     @Test
     void testGetArray() {
-        Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
-        assertEquals(array.get(3), new Array(new int[]{2}));
+        Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
+        assertEquals(array.get(3), Array.of(2));
     }
 }
