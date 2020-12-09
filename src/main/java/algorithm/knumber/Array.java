@@ -1,11 +1,15 @@
 package algorithm.knumber;
 
-public class Array {
-    Array(int[] arrays) {
+import java.util.Arrays;
 
+public class Array {
+    private int[] arrays;
+
+    Array(int[] arrays) {
+        this.arrays = arrays;
     }
 
     int[] cut(int[] cutIndex) {
-        return new int[]{1, 5};
+        return Arrays.copyOfRange(arrays, cutIndex[0] - 1, cutIndex[1]);
     }
 }
