@@ -29,6 +29,6 @@ public class ArrayTest {
     @Test
     void testGetArray() {
         Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
-        assertEquals(array.get(3), Array.of(2));
+        assertEquals(array.get(3), 2);
     }
 }
