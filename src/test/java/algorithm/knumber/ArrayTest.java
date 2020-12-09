@@ -26,6 +26,6 @@ public class ArrayTest {
     @Test
     void testCutSortArray() {
         Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
-        array.cut(new int[]{1, 3}).sort();
+        assertEquals(array.cut(new int[]{1, 3}).sort(), new Array(new int[]{1, 2, 5}));
     }
 }
