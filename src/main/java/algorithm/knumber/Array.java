@@ -5,8 +5,12 @@ import java.util.Arrays;
 public class Array {
     private int[] arrays;
 
-    Array(int[] arrays) {
+    private Array(int[] arrays) {
         this.arrays = arrays;
+    }
+
+    public static Array of(int... arrays){
+        return new Array(arrays);
     }
 
     Array cut(int[] cutIndex) {
