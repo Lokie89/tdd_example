@@ -13,8 +13,14 @@ public class Array {
         return new Array(Arrays.copyOfRange(arrays, cutIndex[0] - 1, cutIndex[1]));
     }
 
-    Array sort(){
+    Array sort() {
         Arrays.sort(arrays);
         return new Array(arrays);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Array array = (Array) obj;
+        return Arrays.equals(arrays, array.arrays);
     }
 }
