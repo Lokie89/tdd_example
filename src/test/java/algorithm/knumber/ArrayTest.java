@@ -4,17 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-
 // https://programmers.co.kr/learn/courses/30/lessons/42748
 public class ArrayTest {
 
     @Test
     void testCutArray() {
         Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
-        assertEquals(array.cut(new int[]{1, 2}), Array.of(1, 5));
-        assertEquals(array.cut(new int[]{1, 3}), Array.of(1, 5, 2));
+        assertEquals(array.cut(1, 2), Array.of(1, 5));
+        assertEquals(array.cut(1, 3), Array.of(1, 5, 2));
     }
 
     @Test
@@ -26,7 +23,7 @@ public class ArrayTest {
     @Test
     void testCutSortArray() {
         Array array = Array.of(1, 5, 2, 6, 3, 7, 4);
-        assertEquals(array.cut(new int[]{1, 3}).sort(), Array.of(1, 2, 5));
+        assertEquals(array.cut(1, 3).sort(), Array.of(1, 2, 5));
     }
 
     @Test
