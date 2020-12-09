@@ -22,8 +22,8 @@ public class Array {
         return new Array(arrays);
     }
 
-    Array get(int index) {
-        return new Array(Arrays.copyOfRange(arrays, index - 1, index));
+    int get(int index) {
+        return arrays[index - 1];
     }
 
     @Override
