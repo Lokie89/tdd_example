@@ -18,6 +18,10 @@ public class Array {
         return new Array(arrays);
     }
 
+    Array get(int index) {
+        return new Array(Arrays.copyOfRange(arrays, index - 1, index));
+    }
+
     @Override
     public boolean equals(Object obj) {
         Array array = (Array) obj;
