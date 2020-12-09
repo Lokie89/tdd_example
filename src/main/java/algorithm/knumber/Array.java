@@ -9,12 +9,12 @@ public class Array {
         this.arrays = arrays;
     }
 
-    int[] cut(int[] cutIndex) {
-        return Arrays.copyOfRange(arrays, cutIndex[0] - 1, cutIndex[1]);
+    Array cut(int[] cutIndex) {
+        return new Array(Arrays.copyOfRange(arrays, cutIndex[0] - 1, cutIndex[1]));
     }
 
-    int[] sort(){
+    Array sort(){
         Arrays.sort(arrays);
-        return arrays;
+        return new Array(arrays);
     }
 }
