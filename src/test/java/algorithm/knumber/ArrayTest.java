@@ -28,4 +28,10 @@ public class ArrayTest {
         Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
         assertEquals(array.cut(new int[]{1, 3}).sort(), new Array(new int[]{1, 2, 5}));
     }
+
+    @Test
+    void testGetArray() {
+        Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
+        assertEquals(array.get(3), new Array(new int[]{2}));
+    }
 }
