@@ -16,4 +16,10 @@ public class ArrayTest {
         assertTrue(Arrays.equals(array.cut(new int[]{1, 2}), new int[]{1, 5}));
         assertTrue(Arrays.equals(array.cut(new int[]{1, 3}), new int[]{1, 5, 2}));
     }
+
+    @Test
+    void testSortArray() {
+        Array array = new Array(new int[]{1, 5, 2, 6, 3, 7, 4});
+        assertTrue(array.sort(), new int[]{1, 2, 3, 4, 5, 6, 7});
+    }
 }
