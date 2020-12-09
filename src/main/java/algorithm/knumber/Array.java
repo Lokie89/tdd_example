@@ -9,12 +9,12 @@ public class Array {
         this.arrays = arrays;
     }
 
-    public static Array of(int... arrays){
+    public static Array of(int... arrays) {
         return new Array(arrays);
     }
 
-    Array cut(int[] cutIndex) {
-        return new Array(Arrays.copyOfRange(arrays, cutIndex[0] - 1, cutIndex[1]));
+    Array cut(int from, int to) {
+        return new Array(Arrays.copyOfRange(arrays, from - 1, to));
     }
 
     Array sort() {
