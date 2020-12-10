@@ -14,5 +14,9 @@ public class NumberTest {
         Number number = new Number("35");
         int[] deletedNumbers = number.delete(1);
         assertTrue(Arrays.equals(deletedNumbers, new int[]{3, 5}));
+
+        Number number2 = new Number("77");
+        int[] deletedNumbers2 = number2.delete(1);
+        assertTrue(Arrays.equals(deletedNumbers2, new int[]{7}));
     }
 }
