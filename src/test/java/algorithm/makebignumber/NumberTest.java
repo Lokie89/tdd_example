@@ -13,6 +13,6 @@ public class NumberTest {
     void deleteNumberTest() {
         Number number = new Number("1924");
         int[] deletedNumbers = number.delete(2);
-        assertEquals(Arrays.equals(deletedNumbers, new int[]{12, 14, 19, 24, 92, 94}));
+        assertTrue(Arrays.equals(deletedNumbers, new int[]{12, 14, 19, 24, 92, 94}));
     }
 }
