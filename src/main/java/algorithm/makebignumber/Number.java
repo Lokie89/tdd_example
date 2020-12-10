@@ -13,7 +13,16 @@ public class Number {
     }
 
     int[] delete(int count) {
-        return deleteOne(number).stream().mapToInt(value -> value).toArray();
+        final int remainCount = number.length() - count;
+        HashSet<String> deletedNumbers = deleteOne(number);
+        while (deletedNumbers.iterator().next().length() > remainCount) {
+            HashSet<String> tempNumbers = new HashSet<>();
+            for (String number : deletedNumbers) {
+                tempNumbers.addAll(deleteOne(number));
+            }
+            deletedNumbers = tempNumbers;
+        }
+        return deletedNumbers.stream().mapToInt(Integer::parseInt).toArray();
     }
 
     private HashSet<String> deleteOne(String number) {
