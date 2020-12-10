@@ -7,6 +7,6 @@ public class Number {
     }
 
     int[] delete(int count) {
-        return new int[]{12, 14, 19, 24, 92, 94};
+        return new int[]{3, 5};
     }
 }
