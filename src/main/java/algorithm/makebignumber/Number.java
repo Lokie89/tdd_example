@@ -16,8 +16,8 @@ public class Number {
         return deleteOne(number).stream().mapToInt(value -> value).toArray();
     }
 
-    private HashSet<Integer> deleteOne(String number) {
-        HashSet<Integer> numberSet = new HashSet<>();
+    private HashSet<String> deleteOne(String number) {
+        HashSet<String> numberSet = new HashSet<>();
         char[] numberCharArray = number.toCharArray();
         for (int i = 0; i < numberCharArray.length; i++) {
             int finalI = i;
@@ -25,7 +25,7 @@ public class Number {
                     .filter(index -> finalI != index)
                     .mapToObj(index -> String.valueOf(numberCharArray[index]))
                     .collect(Collectors.joining());
-            numberSet.add(Integer.parseInt(removedNumber));
+            numberSet.add(removedNumber);
         }
         return numberSet;
     }
