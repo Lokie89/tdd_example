@@ -22,7 +22,7 @@ public class Number {
             }
             deletedNumbers = tempNumbers;
         }
-        return deletedNumbers.stream().mapToInt(Integer::parseInt).toArray();
+        return deletedNumbers.stream().mapToInt(Integer::parseInt).sorted().toArray();
     }
 
     private HashSet<String> deleteOne(String number) {
