@@ -1,41 +1,37 @@
 package algorithm.makebignumber;
 
-import java.util.HashSet;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Number {
 
-    String number;
+    List<Character> numberCharList;
+    int deleteCount;
 
     Number(String number) {
-        this.number = number;
+        numberCharList = number.chars().mapToObj(value -> (char) value).collect(Collectors.toList());
     }
 
-    int[] delete(int count) {
-        final int remainCount = number.length() - count;
-        HashSet<String> deletedNumbers = deleteOne(number);
-        while (deletedNumbers.iterator().next().length() > remainCount) {
-            HashSet<String> tempNumbers = new HashSet<>();
-            for (String number : deletedNumbers) {
-                tempNumbers.addAll(deleteOne(number));
+    String delete(int count) {
+        while (deleteCount < count) {
+            deleteOne();
+        }
+        return numberCharList.stream().map(String::valueOf).collect(Collectors.joining());
+    }
+
+    private void deleteOne() {
+        for (int i = 0; i < numberCharList.size() - 1; i++) {
+            Character one = numberCharList.get(i);
+            Character two = numberCharList.get(i + 1);
+            if (one.compareTo(two) < 0) {
+                numberCharList.remove(i);
+                deleteCount++;
+                break;
             }
-            deletedNumbers = tempNumbers;
+            if (i == numberCharList.size() - 2) {
+                numberCharList.remove(numberCharList.size() - 1);
+                deleteCount++;
+            }
         }
-        return deletedNumbers.stream().mapToInt(Integer::parseInt).sorted().toArray();
-    }
-
-    private HashSet<String> deleteOne(String number) {
-        HashSet<String> numberSet = new HashSet<>();
-        char[] numberCharArray = number.toCharArray();
-        for (int i = 0; i < numberCharArray.length; i++) {
-            int finalI = i;
-            String removedNumber = IntStream.range(0, numberCharArray.length)
-                    .filter(index -> finalI != index)
-                    .mapToObj(index -> String.valueOf(numberCharArray[index]))
-                    .collect(Collectors.joining());
-            numberSet.add(removedNumber);
-        }
-        return numberSet;
     }
 }
