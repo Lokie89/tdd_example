@@ -19,4 +19,11 @@ public class NumberTest {
         int[] deletedNumbers2 = number2.delete(1);
         assertTrue(Arrays.equals(deletedNumbers2, new int[]{7}));
     }
+
+    @Test
+    void deleteNumberOverOneTest() {
+        Number number = new Number("345");
+        int[] deletedNumbers = number.delete(2);
+        assertTrue(Arrays.equals(deletedNumbers, new int[]{3, 4, 5}));
+    }
 }
