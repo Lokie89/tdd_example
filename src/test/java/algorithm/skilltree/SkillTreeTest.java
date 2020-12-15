@@ -13,5 +13,8 @@ public class SkillTreeTest {
         Skill skill = new Skill("CBD");
         skillTree.excludeUnskilled(skill);
         assertEquals(skillTree.skillTree,"BCD");
+        Skill skill2 = new Skill("D");
+        skillTree.excludeUnskilled(skill2);
+        assertEquals(skillTree.skillTree,"D");
     }
 }
