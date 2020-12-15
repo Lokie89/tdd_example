@@ -17,4 +17,10 @@ public class SkillTreeTest {
         skillTree.excludeUnskilled(skill2);
         assertEquals(skillTree, new SkillTree("D"));
     }
+
+    @Test
+    void correctOrderTest() {
+        SkillTree skillTree = new SkillTree("ABC");
+        assertTrue(skillTree.isCorrectOrder(new Skill("AB")));
+    }
 }
