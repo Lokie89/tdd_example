@@ -22,7 +22,7 @@ public class SkillTreeTest {
     void correctOrderTest() {
         SkillTree skillTree = new SkillTree("ABC");
         assertTrue(skillTree.isCorrectOrder(new Skill("AB")));
-        assertTrue(skillTree.isCorrectOrder(new Skill("BC")));
+        assertFalse(skillTree.isCorrectOrder(new Skill("BC")));
         assertFalse(skillTree.isCorrectOrder(new Skill("CA")));
     }
 }
