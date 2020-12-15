@@ -12,5 +12,7 @@ public class BaseConverterTest {
         BaseConverter baseConverter = new BaseConverter(3);
         Base base = baseConverter.convert(10, 5);
         assertEquals(base, new Base(3, 12));
+        Base base2 = baseConverter.convert(4, 123);
+        assertEquals(base2, new Base(3, 1000));
     }
 }
