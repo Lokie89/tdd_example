@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SkillTreeTest {
 
     @Test
-    void excludeUnskilledTest(){
+    void excludeUnskilledTest() {
         SkillTree skillTree = new SkillTree("BACDE");
         Skill skill = new Skill("CBD");
         skillTree.excludeUnskilled(skill);
-        assertEquals(skillTree.skillTree,"BCD");
+        assertEquals(skillTree, new SkillTree("BCD"));
         Skill skill2 = new Skill("D");
         skillTree.excludeUnskilled(skill2);
-        assertEquals(skillTree.skillTree,"D");
+        assertEquals(skillTree, new SkillTree("D"));
     }
 }
