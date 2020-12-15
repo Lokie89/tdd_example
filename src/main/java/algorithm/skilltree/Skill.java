@@ -12,18 +12,14 @@ public class Skill {
     }
 
     boolean isCorrectOrder(String tree) {
-        char[] treeCharArray = tree.toCharArray();
-        int index = -1;
-        for (int i = 0; i < treeCharArray.length; i++) {
-            char t = treeCharArray[i];
-            int skillIndex = skill.indexOf(String.valueOf(t));
-            if (skillIndex < 0) {
-                continue;
-            }
-            if (index > skillIndex) {
+        char[] skillCharArray = skill.toCharArray();
+        final int length = Integer.min(skillCharArray.length, tree.length());
+        for (int i = 0; i < length; i++) {
+            char sk = skillCharArray[i];
+            int index = tree.indexOf(String.valueOf(sk));
+            if (index != i) {
                 return false;
             }
-            index = skillIndex;
         }
         return true;
     }
