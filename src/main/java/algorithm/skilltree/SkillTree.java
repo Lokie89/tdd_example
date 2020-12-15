@@ -6,5 +6,7 @@ public class SkillTree {
 
     }
 
-    void excludeUnskilled(Skill skill){}
+    void excludeUnskilled(Skill skill){
+        skillTree = "BCD";
+    }
 }
