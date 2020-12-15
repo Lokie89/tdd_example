@@ -18,6 +18,10 @@ public class SkillTree {
         skillTree = sb.toString();
     }
 
+    boolean isCorrectOrder(Skill skill){
+        return true;
+    }
+
     @Override
     public boolean equals(Object obj) {
         SkillTree skillTree = (SkillTree) obj;
