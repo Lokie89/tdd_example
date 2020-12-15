@@ -18,8 +18,8 @@ public class SkillTree {
         skillTree = sb.toString();
     }
 
-    boolean isCorrectOrder(Skill skill){
-        return true;
+    boolean isCorrectOrder(Skill skill) {
+        return skill.isCorrectOrder(skillTree);
     }
 
     @Override
