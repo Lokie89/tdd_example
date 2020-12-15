@@ -25,8 +25,8 @@ public class BaseConverter {
     private int based10(int base, int number) {
         char[] chars = String.valueOf(number).toCharArray();
         int based10 = 0;
-        for (int i = chars.length - 1; i >= 0; i--) {
-            based10 += (chars[i] - 48) * Math.pow(base, i);
+        for (int i = chars.length - 1, j = 0; i >= 0; i--, j++) {
+            based10 += (chars[i] - 48) * Math.pow(base, j);
         }
         return based10;
     }
