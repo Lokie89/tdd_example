@@ -1,7 +1,7 @@
 package algorithm.skilltree;
 
 public class SkillTree {
-    String skillTree;
+    private String skillTree;
 
     SkillTree(String skillTree) {
         this.skillTree = skillTree;
@@ -16,5 +16,11 @@ public class SkillTree {
             }
         }
         skillTree = sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        SkillTree skillTree = (SkillTree) obj;
+        return this.skillTree.equals(skillTree.skillTree);
     }
 }
