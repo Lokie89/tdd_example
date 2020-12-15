@@ -8,5 +8,6 @@ public class SolutionTest {
     @Test
     void solutionTest() {
         assertEquals(new Solution().solution("CBD", new String[]{"BACDE", "CBADF", "AECB", "BDA"}), 2);
+        assertEquals(new Solution().solution("CBD", new String[]{"BACDE", "CBADF"}), 1);
     }
 }
