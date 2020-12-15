@@ -11,7 +11,7 @@ public class SkillTree {
         String[] splitSkillTrees = skillTree.split("");
         StringBuilder sb = new StringBuilder();
         for (String splitSkillTree : splitSkillTrees) {
-            if (skill.skill.contains(splitSkillTree)) {
+            if (skill.contains(splitSkillTree)) {
                 sb.append(splitSkillTree);
             }
         }
