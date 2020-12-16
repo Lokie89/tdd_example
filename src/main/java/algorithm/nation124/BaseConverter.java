@@ -12,6 +12,9 @@ public class BaseConverter {
         if (this.base == base) {
             return new Base(base, number);
         }
+        if (number == 0) {
+            return new Base(base, 0);
+        }
         int based10 = based10(base, number);
         StringBuilder sb = new StringBuilder();
         while (based10 > 0) {
