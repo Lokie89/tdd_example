@@ -15,4 +15,9 @@ public class Base {
         Base base = (Base) obj;
         return this.base == base.base && this.number == base.number;
     }
+
+    int getNumber(){
+        return number;
+    }
+
 }
